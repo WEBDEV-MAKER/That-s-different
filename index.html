@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudo 39</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .game-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .game-button:hover {
+            background-color: #0056b3;
+        }
+        .game-container {
+            margin-top: 30px;
+        }
+        .hidden {
+            display: none;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Sudo 39</h1>
+    <p>Select a game below to start playing:</p>
+
+    <button class="game-button" onclick="showGame('minecraft')">Fanmade Minecraft Classic</button>
+    <button class="game-button" onclick="showGame('thatsdifferent')">That's Different</button>
+
+    <div class="game-container">
+        <!-- Game content for Minecraft Classic -->
+        <iframe id="minecraft" class="hidden" src="https://webdev-maker.github.io/That-s-different/"></iframe>
+        
+        <!-- Game content for "That's Different" -->
+        <iframe id="thatsdifferent" class="hidden" src="https://webdev-maker.github.io/Minecraft-classic/"></iframe>
+    </div>
+
+    <script>
+        function showGame(gameId) {
+            // Hide all iframes
+            document.querySelectorAll('iframe').forEach(frame => frame.classList.add('hidden'));
+
+            // Show the selected game iframe
+            document.getElementById(gameId).classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
